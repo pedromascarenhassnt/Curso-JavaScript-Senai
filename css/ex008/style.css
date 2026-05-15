@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#noticias{
+    background-color: rgb(129, 24, 129);
+     display: flex;
+     flex-direction: row;
+}
+
+p{
+   background-color: rgb(229, 135, 229);
+   margin: 20px;
+   padding: 10px;
+   width: 200px;
+   height: 200px;
+   text-align: center;
+   font-size: 40px;
+   
+}
