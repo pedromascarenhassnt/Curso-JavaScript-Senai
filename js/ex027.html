@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <style>
+
+
+        label, #email{
+            display: block;
+        }
+        .label-radio{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com formulários</h1>
+
+    <form method="post">
+        
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" name="idade" id="idade" min="5" max="20" required>
+        
+        <label for="">Notas:</label>
+        <input type="number" name="notas" id="notas" min="0" max="10" step="0.5">
+
+        <label for="">Senha:</label>
+        <input type="password" name="" id="password">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="casado" class="label-radio">Casado:</label>
+        <input type="radio" name="status" id="casado">
+        
+        <label for="solteiro"class="label-radio">Solteiro:</label>
+        <input type="radio" name="status" id="solteiro">
+
+        <label for="Viuvo"class="label-radio">Viuvo(a):</label>
+        <input type="radio" name="status" id="viuvo">
+
+        <label for="">Bike</label>
+        <input type="checkbox" name="" id="">
+
+        <label for="">Natação</label>
+        <input type="checkbox" name="" id="">
+
+        <label for="">Box</label>
+        <input type="checkbox" name="" id="">
+
+        <button type="submit">Enviar</button>
+
+        
+
+
+
+        
+    </form>
+</body>
+</html>
