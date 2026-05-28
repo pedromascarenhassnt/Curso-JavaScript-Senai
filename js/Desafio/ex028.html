@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <form id="form">
+
+        <h2>Login</h2>
+
+        <label for="">Email:</label>
+        <input type="email" name="" id="email">
+    
+        <label for="">Senha:</label>
+        <input type="password" name="" id="senha">
+
+        <button type="submit">Enviar</button>
+
+
+    </form>
+   
+
+    
+
+
+
+
+
+    <script>
+        
+       
+        // let form = document.getElementById(`form`)
+        // form.addEventListener(`submit`, function(event){
+
+        //     event.preventDefault() 
+
+           
+        //     if(email == "pedromascarenhas@gmail.com" && senha==12345){
+        //         let email = document.getElementById(`email`)
+        
+        //      let senha = document.getElementById(`senha`)
+        //         window.location.href = `pagina2.html`
+                
+
+        //     }else{
+        //         alert(`Login e senha incorretos!!`)
+        //     }
+                
+                       
+        //     })
+
+
+        const form = document.getElementById('form')
+        const emailCorreto = 'pedromascarenhas@gmail.com'
+        const senhaCorreta ='123456'
+
+        form.addEventListener(`submit`, function(event){
+            event.preventDefault()
+            const emailUsuario = document.getElementById('email').value
+            const senhaUsuario = document.getElementById('senha').value
+
+            if(emailUsuario ===  emailCorreto  && senhaUsuario === senhaCorreta  ){
+                window.location.href = 'pagina2.html'
+            }else{
+                alert('Login e senha incorretos!!')
+                form.reset()
+            }
+        })
+            
+
+    </script>
+</body>
+</html>

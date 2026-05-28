@@ -6,21 +6,94 @@
     <title>Formulario</title>
 
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form{
+            background-color: rgb(205, 132, 253);
+            width: 300px;
+            border-radius:10px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            color: rgb(54, 0, 85);
+            font-family: "Poppins", sans-serif;
+            
+        }
+       
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
 
+        }
+        h1{
+            margin-bottom: 20px;
+        }
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        input{
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 2px 1px 5px 0px;
+            
+        }
 
-        label, #email{
+        /* label, #email{
             display: block;
         }
         .label-radio{
             display: inline;
+        } */
+        
+        .radio, .checkbox{
+            width: 10%;
+            box-shadow: none;
         }
+
+        button{
+            width: 100%;
+            padding: 7.5px;
+            background-color: rgb(166, 33, 255);
+            color: black;
+            margin-top: 20px;
+            border-radius: 15px;
+            cursor : pointer;
+            border : none;
+
+            
+        }
+
+        button:hover {
+            background-color: rgb(234, 202, 255);
+        }
+
+        input:focus{
+            outline:none;
+            box-shadow: 2px 1px 5px 0px rgb(234, 202, 255);
+            
+        }
+     
+        
+
     </style>
 </head>
 <body>
-    <h1>Trabalhando com formulários</h1>
+    
 
-    <form method="post">
-        
+    <form id="form">
+        <h1>Trabalhando com formulários</h1>
+
         <label for="name">Nome:</label>
         <input type="text" id="name" required>
 
@@ -36,23 +109,17 @@
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
 
-        <label for="casado" class="label-radio">Casado:</label>
-        <input type="radio" name="status" id="casado">
+        <label for="">Estado Civil:</label>
+
+        <input class="radio" type="radio" name="status" id="casado">Casado   
+        <input class="radio" type="radio"name="status" id="solteiro"> Solteiro
+        <input class="radio" type="radio" name="status" id="viuvo">Viuvo
+
+        <label for="">Atividades:</label>
         
-        <label for="solteiro"class="label-radio">Solteiro:</label>
-        <input type="radio" name="status" id="solteiro">
-
-        <label for="Viuvo"class="label-radio">Viuvo(a):</label>
-        <input type="radio" name="status" id="viuvo">
-
-        <label for="">Bike</label>
-        <input type="checkbox" name="" id="">
-
-        <label for="">Natação</label>
-        <input type="checkbox" name="" id="">
-
-        <label for="">Box</label>
-        <input type="checkbox" name="" id="">
+        <input class="checkbox" type="checkbox" name="" id="bike">Bike
+        <input class="checkbox" type="checkbox" name="" id="natação">Natação
+        <input class="checkbox" type="checkbox" name="" id="boxe">Boxe
 
         <button type="submit">Enviar</button>
 
@@ -60,7 +127,36 @@
 
 
 
-        
+        <script>
+            let form = document.getElementById(`form`)
+
+
+            form.addEventListener(`submit`, function(){
+                event.preventDefault() //PARA CANCELAR / PREVINIR O COMPORTAMENTO PADRÃO
+                console.log("O SUBMIT ACONTECEU!")
+                alert("Formulário enviado")
+
+                let nomeUsuario = document.getElementById(`nome`).value
+                alert(`Olá ${nomeUsuario}! Formulário enviado!!`)
+            })
+
+            
+            // let body = document.getElementById(`body`)[0]
+
+            // body.addEventListener(`keypress`, function(event){
+            //     console.log(event)
+            //     console.log("A TECLA FOI PRESSIONADA")
+            // })
+
+            let body = document.querySelector(`body`)
+            body.addEventListener(`keypress`, function(event){
+                if(event.key == `f`){
+                    window.location.href = `ex026.html`
+                    console.log("A TECLA `f` FOI PRESSIONADA")
+                }
+
+            })
+        </script>
     </form>
 </body>
 </html>
